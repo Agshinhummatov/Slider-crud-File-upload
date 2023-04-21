@@ -1,0 +1,31 @@
+﻿@model Slider
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container my-5">
+
+    <form class="form-sample" asp-action="Create" method="post" enctype="multipart/form-data">   @*enctype="multipart/form-data bunu mutleq yaziriq upload edende  string kimi deyil file kimi gonderisin methodumuza "*@
+
+        <input  class="form-control" id="customFile" asp-for="Photo"/>
+        <span class="text-danger" asp-validation-for="Photo"></span>  @* bu ise bize validationlari cixardir yeni inputun altina sozler cixardirki type duzgun deyil*@
+        <div class="buttons my-3">
+           <button type="submit" class="btn btn-primary mr-2">Submit</button>
+           <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </div>
+       
+    </form>
+</div>
+
+@section Scripts{
+
+
+   
+
+    
+    <partial name="_ValidationScriptsPartial" />
+ 
+
+
+}
